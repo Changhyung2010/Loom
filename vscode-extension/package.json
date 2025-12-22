@@ -1,0 +1,74 @@
+{
+  "name": "tracemind",
+  "displayName": "TraceMind",
+  "description": "Explain files using AI - analyzes code, imports, and git history",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onCommand:tracemind.explainFile"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tracemind.explainFile",
+        "title": "Explain File with TraceMind"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "tracemind.explainFile",
+          "when": "editorTextFocus && !editorReadonly",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "tracemind.explainFile",
+          "when": "explorerResourceIsFile",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "tracemind.explainFile",
+        "key": "cmd+shift+e",
+        "mac": "cmd+shift+e",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "explain",
+    "code",
+    "documentation",
+    "openai",
+    "gpt",
+    "code-explanation",
+    "code-review"
+  ],
+  "author": "TraceMind",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tracemind/tracemind-mvp"
+  },
+  "bugs": {
+    "url": "https://github.com/tracemind/tracemind-mvp/issues"
+  },
+  "homepage": "https://github.com/tracemind/tracemind-mvp"
+}
+

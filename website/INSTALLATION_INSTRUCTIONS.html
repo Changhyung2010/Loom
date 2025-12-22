@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TraceMind - Installation Instructions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TraceMind</h1>
+            <p class="tagline">VS Code Extension - Installation Guide</p>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h2>Complete Installation Instructions</h2>
+                <p>Follow these steps to install and use TraceMind in VS Code.</p>
+            </section>
+
+            <section>
+                <h2>Prerequisites</h2>
+                <div class="download-box">
+                    <p>Before installing, make sure you have:</p>
+                    <ul>
+                        <li><strong>VS Code 1.60.0+</strong> - <a href="https://code.visualstudio.com/" target="_blank">Download</a></li>
+                        <li><strong>Python 3.8+</strong> - <a href="https://www.python.org/downloads/" target="_blank">Download</a></li>
+                        <li><strong>Node.js</strong> (for packaging) - <a href="https://nodejs.org/" target="_blank">Download</a></li>
+                        <li><strong>OpenAI API Key</strong> - <a href="https://platform.openai.com/api-keys" target="_blank">Get one here</a></li>
+                        <li><strong>Git</strong> (optional, for git history)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 1: Install the TraceMind Agent</h2>
+                <div class="download-box">
+                    <p>The VS Code extension requires the TraceMind agent to be installed.</p>
+                    
+                    <h3>Download and Install</h3>
+                    <ol>
+                        <li><strong>Clone or download the repository:</strong>
+                            <pre><code>git clone https://github.com/tracemind/tracemind-mvp.git
+cd tracemind-mvp</code></pre>
+                            Or download the ZIP file and extract it.
+                        </li>
+                        <li><strong>Navigate to the agent directory:</strong>
+                            <pre><code>cd agent</code></pre>
+                        </li>
+                        <li><strong>Install Python dependencies:</strong>
+                            <pre><code>pip install -r requirements.txt</code></pre>
+                            This installs the required packages: <code>openai</code> and <code>python-dotenv</code>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 2: Configure Your OpenAI API Key</h2>
+                <div class="download-box">
+                    <p>You need to set your OpenAI API key. Choose one method:</p>
+                    
+                    <h3>Method 1: .env File (Recommended)</h3>
+                    <ol>
+                        <li>Navigate to the agent directory:
+                            <pre><code>cd agent</code></pre>
+                        </li>
+                        <li>Create a <code>.env</code> file:
+                            <pre><code># Linux/Mac
+nano .env
+
+# Windows
+notepad .env</code></pre>
+                        </li>
+                        <li>Add your API key:
+                            <pre><code>OPENAI_API_KEY=your_api_key_here</code></pre>
+                        </li>
+                        <li>Save the file.</li>
+                    </ol>
+                    
+                    <h3>Method 2: Environment Variable</h3>
+                    <p><strong>Linux/Mac:</strong></p>
+                    <pre><code>export OPENAI_API_KEY=your_api_key_here</code></pre>
+                    
+                    <p>To make it permanent, add to <code>~/.zshrc</code> or <code>~/.bashrc</code>:</p>
+                    <pre><code>echo 'export OPENAI_API_KEY=your_api_key_here' >> ~/.zshrc
+source ~/.zshrc</code></pre>
+                    
+                    <p><strong>Windows (Command Prompt):</strong></p>
+                    <pre><code>set OPENAI_API_KEY=your_api_key_here</code></pre>
+                    
+                    <p><strong>Windows (PowerShell):</strong></p>
+                    <pre><code>$env:OPENAI_API_KEY="your_api_key_here"</code></pre>
+                    
+                    <p><strong>Get your API key:</strong> <a href="https://platform.openai.com/api-keys" target="_blank">https://platform.openai.com/api-keys</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 3: Test the Agent</h2>
+                <div class="download-box">
+                    <p>Verify the agent works before installing the extension:</p>
+                    <pre><code>cd agent
+python agent.py /path/to/any/code/file.py</code></pre>
+                    <p>You should see status messages and an AI-generated explanation. If this works, proceed to Step 4.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 4: Install the VS Code Extension</h2>
+                <div class="download-box">
+                    <h3>Package the Extension (if building from source)</h3>
+                    <pre><code>cd vscode-extension
+npm install -g vsce
+npm install
+vsce package</code></pre>
+                    <p>This creates a <code>tracemind-0.0.2.vsix</code> file.</p>
+                    
+                    <h3>Install in VS Code</h3>
+                    <p><strong>Option A: Via UI (Easiest)</strong></p>
+                    <ol>
+                        <li>Open VS Code</li>
+                        <li>Press <code>Ctrl+Shift+X</code> (Windows/Linux) or <code>Cmd+Shift+X</code> (Mac)</li>
+                        <li>Click the <code>...</code> menu (three dots) in Extensions</li>
+                        <li>Select "Install from VSIX..."</li>
+                        <li>Navigate to and select <code>tracemind-0.0.2.vsix</code></li>
+                        <li>Click "Install"</li>
+                        <li>Reload VS Code when prompted</li>
+                    </ol>
+                    
+                    <p><strong>Option B: Via Command Line</strong></p>
+                    <pre><code>code --install-extension tracemind-0.0.2.vsix</code></pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 5: Verify Installation</h2>
+                <div class="download-box">
+                    <ol>
+                        <li>Open VS Code</li>
+                        <li>Go to Extensions (<code>Ctrl+Shift+X</code> / <code>Cmd+Shift+X</code>)</li>
+                        <li>Search for "TraceMind"</li>
+                        <li>Verify it's installed and enabled</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Step 6: Using TraceMind</h2>
+                <div class="usage-box">
+                    <h3>Method 1: Command Palette</h3>
+                    <ol>
+                        <li>Open any code file in VS Code</li>
+                        <li>Press <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (Mac)</li>
+                        <li>Type "TraceMind: Explain File with TraceMind"</li>
+                        <li>Press Enter</li>
+                        <li>View the explanation in the webview panel</li>
+                    </ol>
+                    
+                    <h3>Method 2: Keyboard Shortcut</h3>
+                    <ol>
+                        <li>Open any code file in VS Code</li>
+                        <li>Press <code>Ctrl+Shift+E</code> (Windows/Linux) or <code>Cmd+Shift+E</code> (Mac)</li>
+                        <li>The explanation appears automatically</li>
+                    </ol>
+                    
+                    <h3>Method 3: Context Menu</h3>
+                    <ol>
+                        <li>Right-click on a file in the Explorer sidebar</li>
+                        <li>Select "Explain File with TraceMind"</li>
+                        <li>Or right-click in an open editor tab</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Troubleshooting</h2>
+                <div class="troubleshooting-box">
+                    <dl>
+                        <dt>"agent.py not found"</dt>
+                        <dd>
+                            The extension looks for the agent at <code>../agent/agent.py</code> relative to the extension folder.
+                            Make sure the agent is installed in the correct location, or modify the path in <code>extension.js</code>.
+                        </dd>
+                        
+                        <dt>"Python not found"</dt>
+                        <dd>
+                            Ensure Python 3.8+ is installed and in your PATH. Test with <code>python3 --version</code>.
+                            Add Python to your PATH if needed.
+                        </dd>
+                        
+                        <dt>"API key error" or "OPENAI_API_KEY not set"</dt>
+                        <dd>
+                            Check if the <code>.env</code> file exists in the agent directory with the correct API key.
+                            Or set it as an environment variable. Get your key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI</a>.
+                        </dd>
+                        
+                        <dt>"OpenAI package not installed"</dt>
+                        <dd>
+                            Run: <code>cd agent && pip install -r requirements.txt</code>
+                        </dd>
+                        
+                        <dt>Extension not working</dt>
+                        <dd>
+                            Check VS Code Developer Console (Help → Toggle Developer Tools) for errors.
+                            Make sure the file is saved (not untitled). Verify the agent works from command line.
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+
+            <section>
+                <h2>Quick Reference</h2>
+                <div class="download-box">
+                    <h3>Keyboard Shortcuts</h3>
+                    <ul>
+                        <li><strong>Explain File:</strong> <code>Ctrl+Shift+E</code> (Windows/Linux) or <code>Cmd+Shift+E</code> (Mac)</li>
+                        <li><strong>Command Palette:</strong> <code>Ctrl+Shift+P</code> (Windows/Linux) or <code>Cmd+Shift+P</code> (Mac)</li>
+                        <li><strong>Extensions:</strong> <code>Ctrl+Shift+X</code> (Windows/Linux) or <code>Cmd+Shift+X</code> (Mac)</li>
+                    </ul>
+                    
+                    <h3>Supported File Types</h3>
+                    <ul>
+                        <li>Python (.py)</li>
+                        <li>JavaScript/TypeScript (.js, .jsx, .ts, .tsx)</li>
+                        <li>Java (.java)</li>
+                        <li>Go (.go)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Cost Information</h2>
+                <div class="cost-box">
+                    <p>TraceMind uses OpenAI's <code>gpt-4o-mini</code> model:</p>
+                    <ul>
+                        <li><strong>Cost per explanation:</strong> ~$0.001-0.002</li>
+                        <li><strong>Very affordable</strong> for personal use</li>
+                        <li><strong>Pay only for what you use</strong> - no subscriptions</li>
+                    </ul>
+                    <p><strong>Get your API key:</strong> <a href="https://platform.openai.com/api-keys" target="_blank">https://platform.openai.com/api-keys</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p><a href="index.html">← Back to Home</a> | <a href="downloads.html">Downloads</a></p>
+            <p>TraceMind MVP - For more help, check the README files in each component</p>
+        </footer>
+    </div>
+</body>
+</html>
+
