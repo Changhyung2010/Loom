@@ -1,4 +1,4 @@
-# TraceMind - AI-Powered Code Explanation Tool
+# Loom - AI-Powered Code Explanation Tool
 
 TraceMind is a developer-focused MVP tool that explains code files using AI. It analyzes your code, imports, dependencies, and git history to provide clear, contextual explanations.
 
