@@ -2,7 +2,7 @@
   "name": "tracemind",
   "displayName": "TraceMind",
   "description": "Explain files using AI - analyzes code, imports, and git history",
-  "version": "0.0.2",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.60.0"
   },
@@ -20,6 +20,14 @@
       {
         "command": "tracemind.explainFile",
         "title": "Explain File with TraceMind"
+      },
+      {
+        "command": "tracemind.settings",
+        "title": "TraceMind: Open Settings"
+      },
+      {
+        "command": "tracemind.resetTokens",
+        "title": "TraceMind: Reset Token Usage"
       }
     ],
     "menus": {
