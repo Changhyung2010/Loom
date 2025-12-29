@@ -1,0 +1,16 @@
+/* Header styles */
+.app-header {
+  position: relative;
+  z-index: 100;
+}
+
+.header-btn:hover {
+  background-color: #f5f5f5 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #1d1d1f !important;
+}
+
+.reset-btn:hover {
+  background-color: #f5f5f5 !important;
+  color: #ef4444 !important;
+}

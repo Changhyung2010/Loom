@@ -1,0 +1,46 @@
+/* FileSelector styles */
+
+.file-display {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.file-display:hover {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: #f5f5f5 !important;
+  transform: translateY(-1px);
+}
+
+.browse-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.browse-btn:hover {
+  background-color: #f5f5f5 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #1d1d1f !important;
+  transform: translateY(-1px);
+}
+
+.browse-btn:active {
+  transform: translateY(0);
+}
+
+.explain-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explain-btn:not(.disabled):hover {
+  background-color: #e0e0e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.explain-btn:not(.disabled):active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
