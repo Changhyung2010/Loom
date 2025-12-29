@@ -1,0 +1,64 @@
+/* TabBar styles */
+
+.tab-bar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.tab-bar::-webkit-scrollbar {
+  height: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-bar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-bar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes tabSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.tab-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: tabSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-item:hover:not(.active) {
+  transform: translateY(-1px);
+}
+
+.tab-item:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.tab-close-btn {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-close-btn:hover {
+  transform: scale(1.15);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+

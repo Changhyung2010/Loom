@@ -1,0 +1,210 @@
+/* TraceMind Website Styles - Dark Mode Friendly */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #252526;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #3e3e42;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #4fc3f7;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #858585;
+    font-style: italic;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #4fc3f7;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: #ce9178;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: #4fc3f7;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #81d4fa;
+    text-decoration: underline;
+}
+
+code {
+    background-color: #1e1e1e;
+    color: #ce9178;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid #3e3e42;
+}
+
+pre code {
+    color: #d4d4d4;
+    background-color: transparent;
+    padding: 0;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.2s;
+    border: 2px solid;
+}
+
+.btn-primary {
+    background-color: #4fc3f7;
+    color: #1e1e1e;
+    border-color: #4fc3f7;
+}
+
+.btn-primary:hover {
+    background-color: #81d4fa;
+    border-color: #81d4fa;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #4fc3f7;
+    border-color: #4fc3f7;
+}
+
+.btn-secondary:hover {
+    background-color: #4fc3f7;
+    color: #1e1e1e;
+    text-decoration: none;
+}
+
+.download-box,
+.usage-box,
+.cost-box,
+.troubleshooting-box {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #3e3e42;
+    margin: 20px 0;
+}
+
+.troubleshooting-box dl {
+    margin-left: 0;
+}
+
+.troubleshooting-box dt {
+    color: #ce9178;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.troubleshooting-box dd {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #d4d4d4;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #3e3e42;
+    color: #858585;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+

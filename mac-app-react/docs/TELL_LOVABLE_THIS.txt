@@ -1,0 +1,28 @@
+Hi Lovable Support,
+
+I need help setting up authentication for my Electron app integration. 
+
+After a user successfully logs in on my website, I need the website to:
+
+1. Store the authentication token in localStorage with the key 'authToken'
+2. Store user data in localStorage with the key 'user' (as JSON)
+3. Send a postMessage to the parent window (if running in an iframe) with this format:
+   {
+     type: 'auth-success',
+     token: 'the-auth-token',
+     user: { name: '...', email: '...', id: '...' }
+   }
+
+The website should check if it's in an iframe using: window.self !== window.top
+If in an iframe, send: window.parent.postMessage(message, '*')
+
+Please help me:
+- Add this functionality to my login success handler
+- Add this functionality to my signup success handler  
+- Make sure tokens are stored in localStorage
+- Make sure postMessage is sent when in iframe
+
+I can provide the exact code if needed, but would prefer you to integrate it into my existing auth flow.
+
+Thanks!
+
